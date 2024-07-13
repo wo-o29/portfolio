@@ -24,7 +24,7 @@ function Home() {
       <Main ref={containerRef}>
         <Introduce />
         <Project />
-        <Activity />
+        <Activity step={step} />
         <SideBar step={step} upWheel={upWheel} downWheel={downWheel} />
       </Main>
       <Layout isLeft />

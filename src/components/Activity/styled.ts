@@ -1,3 +1,4 @@
+import { css, keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const Box = styled.section`
@@ -21,8 +22,24 @@ export const Grid = styled.ul`
   margin-top: 6.25rem;
 `;
 
-export const Item = styled.li`
+const opacity = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(2.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+export const Item = styled.li<{ isView: boolean }>`
   list-style: circle;
+  ${({ isView }) =>
+    isView &&
+    css`
+      animation: ${opacity} 3s;
+    `}
 `;
 
 export const TitleBox = styled.div`
