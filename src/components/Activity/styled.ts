@@ -17,6 +17,7 @@ export const Grid = styled.ul`
   grid-template-columns: repeat(2, 34.375rem);
   margin: 0 auto;
   width: 81.25rem;
+  padding-left: 5rem;
   justify-content: space-between;
   gap: 5rem 0;
   margin-top: 6.25rem;
