@@ -6,6 +6,7 @@ import SideBar from "../components/SideBar";
 import Activity from "../components/Activity";
 import useWheelControl from "../hooks/useWheelControl";
 import Layout from "../components/Layout";
+import HitCount from "../components/HitCount";
 
 const Main = styled.main`
   width: 87.5rem;
@@ -29,6 +30,7 @@ function Home() {
       </Main>
       <Layout isLeft />
       <Layout isLeft={false} />
+      <HitCount />
     </>
   );
 }

@@ -16,4 +16,4 @@
 .yarn
 
 #costom
-.env
+.env.local

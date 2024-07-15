@@ -2,6 +2,10 @@
 
 const nextConfig = {
   reactStrictMode: false,
+  env: {
+    GA_ID: process.env.NEXT_PUBLIC_GA_ID,
+    GA_VIEW_ID: process.env.NEXT_PUBLIC_GA_VIEW_ID,
+  },
   pageExtensions: ["page.tsx", "page.ts", "page.jsx", "page.js"],
   images: {
     remotePatterns: [
