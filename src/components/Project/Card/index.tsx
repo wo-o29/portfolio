@@ -3,18 +3,18 @@ import { ProjectDataType } from "@/src/types/type";
 import Link from "next/link";
 import { useTheme } from "@/src/context/ThemeContext";
 import DetailArrowIcon from "@/public/icons/detail-arrow.svg";
+import { PROJECT_DATA } from "@/src/constants/project";
 
 interface ProjectProps {
-  className: "card";
   projectData: ProjectDataType;
 }
 
-function ProjectCard({ className, projectData }: ProjectProps) {
+function ProjectCard({ projectData }: ProjectProps) {
   const { title, content, info, github, deploy, imageSrc, query } = projectData;
   const theme = useTheme();
 
   return (
-    <S.Card className={className}>
+    <S.Card className="card">
       <S.ProjectImage src={imageSrc} width={398} height={200} alt={title} />
       <S.Box>
         <S.Header>

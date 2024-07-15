@@ -1,7 +1,7 @@
 import * as S from "./styled";
 import { PROJECT_DATA } from "@/src/constants/project";
 import ProjectCard from "./Card";
-import { MouseEvent, useEffect, useRef, useState } from "react";
+import { MouseEvent, useRef } from "react";
 import ArrowLeftIcon from "@/public/icons/arrow-left.svg";
 import ArrowRightIcon from "@/public/icons/arrow-right.svg";
 import useCarouselNavigationVisibility from "@/src/hooks/useCarouselNavigationVisibility";
@@ -69,11 +69,7 @@ function Project() {
         onMouseUp={handleCarouselMouseUp}
       >
         {PROJECT_DATA.map((project) => (
-          <ProjectCard
-            className="card"
-            key={project.id}
-            projectData={project}
-          />
+          <ProjectCard key={project.id} projectData={project} />
         ))}
         {navigationVisible.prev && (
           <S.PrevButton onClick={() => handleCarouselNavigationClick("prev")}>
