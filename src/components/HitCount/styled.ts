@@ -11,7 +11,7 @@ export const Container = styled.div`
   height: 3.125rem;
   width: 9.375rem;
   overflow: hidden;
-  transition: all 0.5ms;
+  transition: all 0.5s;
 
   &:hover {
     background-color: ${({ theme }) => theme.color.black100};
