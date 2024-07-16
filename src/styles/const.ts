@@ -1,4 +1,4 @@
-import { css, keyframes, Theme } from "@emotion/react";
+import { css, Theme } from "@emotion/react";
 
 export const lightTheme: Theme = {
   color: {
@@ -34,6 +34,7 @@ export const MAIN_BOX_MEDIA_QUERY = `screen and (max-width: 1400px)`;
 export const TABLET_MEDIA_QUERY = `screen and (max-width: 1280px)`;
 export const MEDIUM_MEDIA_QUERY = `screen and (max-width: 1024px)`;
 export const MOBILE_MEDIA_QUERY = `screen and (max-width: 768px)`;
+export const SMALL_MEDIA_QUERY = `screen and (max-width: 430px)`;
 
 export const hoverUnderline = (theme: Theme) => css`
   position: relative;

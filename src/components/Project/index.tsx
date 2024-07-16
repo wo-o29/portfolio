@@ -60,8 +60,8 @@ function Project() {
     <S.Box>
       <S.Title>프로젝트</S.Title>
       <S.Text>
-        캐러셀을 스와이프 하거나 내비게이션 버튼을 통해 프로젝트를 구경하실 수
-        있습니다.
+        캐러셀을 스와이프 하거나 내비게이션 버튼을 <S.MobileLineBreak /> 통해
+        프로젝트를 구경하실 수 있습니다.
       </S.Text>
       <S.List
         ref={listRef}

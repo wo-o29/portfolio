@@ -1,5 +1,11 @@
 import styled from "@emotion/styled";
-import { MEDIUM_MEDIA_QUERY, MOBILE_MEDIA_QUERY } from "@/src/styles/const";
+import {
+  MAIN_BOX_MEDIA_QUERY,
+  TABLET_MEDIA_QUERY,
+  MEDIUM_MEDIA_QUERY,
+  MOBILE_MEDIA_QUERY,
+  SMALL_MEDIA_QUERY,
+} from "@/src/styles/const";
 
 export const Box = styled.section`
   width: 81.25rem;
@@ -7,12 +13,38 @@ export const Box = styled.section`
   margin: 0 auto;
   padding-top: 9.375rem;
   position: relative;
+
+  @media ${MAIN_BOX_MEDIA_QUERY} {
+    width: 69.25rem;
+  }
+
+  @media ${TABLET_MEDIA_QUERY} {
+    width: 53.125rem;
+  }
+
+  @media ${MEDIUM_MEDIA_QUERY} {
+    width: 45.125rem;
+    padding-top: 7.375rem;
+  }
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    width: 25rem;
+    padding-top: 5.375rem;
+  }
+
+  @media ${SMALL_MEDIA_QUERY} {
+    width: 21rem;
+  }
 `;
 
 export const Title = styled.h2`
   font-size: 3.5rem;
   letter-spacing: 0.1875rem;
   text-align: center;
+
+  @media ${TABLET_MEDIA_QUERY} {
+    font-size: 2.75rem;
+  }
 `;
 
 export const Text = styled.h3`
@@ -20,6 +52,23 @@ export const Text = styled.h3`
   padding: 2.1875rem 1rem 0 0;
   text-align: right;
   font-size: 0.875rem;
+
+  @media ${TABLET_MEDIA_QUERY} {
+    padding: 1.1875rem 1rem 0 0;
+    font-size: 0.775rem;
+  }
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    padding: 0.75rem 1rem 0 0;
+  }
+`;
+
+export const MobileLineBreak = styled.br`
+  display: none;
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    display: block;
+  }
 `;
 
 export const List = styled.ul`

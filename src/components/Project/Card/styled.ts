@@ -2,7 +2,14 @@ import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import Image from "next/image";
 import Link from "next/link";
-import { hoverUnderline } from "@/src/styles/const";
+import {
+  hoverUnderline,
+  MAIN_BOX_MEDIA_QUERY,
+  TABLET_MEDIA_QUERY,
+  MEDIUM_MEDIA_QUERY,
+  MOBILE_MEDIA_QUERY,
+  SMALL_MEDIA_QUERY,
+} from "@/src/styles/const";
 
 export const Card = styled.li`
   width: 25rem;
@@ -17,17 +24,77 @@ export const Card = styled.li`
   background-color: ${({ theme }) => theme.color.gray10};
   scroll-snap-align: start; // 카드가 스크롤 시작 부분에 스냅
   cursor: pointer;
+
+  @media ${MAIN_BOX_MEDIA_QUERY} {
+    width: 21rem;
+  }
+
+  @media ${TABLET_MEDIA_QUERY} {
+    width: 25rem;
+  }
+
+  @media ${MEDIUM_MEDIA_QUERY} {
+    width: 21rem;
+  }
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    width: 25rem;
+  }
+
+  @media ${SMALL_MEDIA_QUERY} {
+    width: 21rem;
+  }
 `;
 
 export const ProjectImage = styled(Image)`
   border-radius: 20px 20px 0 0;
   border-bottom: ${({ theme }) => `1px solid ${theme.color.border}`};
   pointer-events: none;
+
+  @media ${MAIN_BOX_MEDIA_QUERY} {
+    width: 20.875rem;
+  }
+
+  @media ${TABLET_MEDIA_QUERY} {
+    width: 24.875rem;
+  }
+
+  @media ${MEDIUM_MEDIA_QUERY} {
+    width: 20.875rem;
+  }
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    width: 24.875rem;
+  }
+
+  @media ${SMALL_MEDIA_QUERY} {
+    width: 20.875rem;
+  }
 `;
 
 export const Box = styled.div`
   padding: 0.3125rem 1.375rem 0.9375rem;
   border-radius: 0 0 20px 20px;
+
+  @media ${MAIN_BOX_MEDIA_QUERY} {
+    padding: 0.3125rem 1rem 0.9375rem;
+  }
+
+  @media ${TABLET_MEDIA_QUERY} {
+    padding: 0.3125rem 1.375rem 0.9375rem;
+  }
+
+  @media ${MEDIUM_MEDIA_QUERY} {
+    padding: 0.3125rem 1rem 0.9375rem;
+  }
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    padding: 0.3125rem 1.375rem 0.9375rem;
+  }
+
+  @media ${SMALL_MEDIA_QUERY} {
+    padding: 0.3125rem 1rem 0.9375rem;
+  }
 `;
 
 export const Header = styled.div`
@@ -38,7 +105,7 @@ export const Header = styled.div`
 `;
 
 export const Title = styled.h3`
-  font-size: 20px;
+  font-size: 1.25rem;
   font-family: "GmarketSansBold";
 `;
 
@@ -59,6 +126,10 @@ export const LinkImage = styled(Image)`
 export const Info = styled.span`
   font-size: 0.75rem;
   color: ${({ theme }) => theme.color.gray60};
+
+  @media ${MAIN_BOX_MEDIA_QUERY} {
+    font-size: 0.65rem;
+  }
 `;
 
 export const Content = styled.p`
