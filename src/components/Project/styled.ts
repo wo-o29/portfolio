@@ -99,12 +99,48 @@ const Button = styled.button`
   &:hover {
     transform: translateY(-50%) scale(1.1);
   }
+
+  @media ${TABLET_MEDIA_QUERY} {
+    top: 46.5%;
+  }
+
+  @media ${MEDIUM_MEDIA_QUERY} {
+    top: 43%;
+  }
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    top: 40%;
+  }
 `;
 
 export const PrevButton = styled(Button)`
   left: -2%;
+
+  @media ${TABLET_MEDIA_QUERY} {
+    left: -2.5%;
+  }
+
+  @media ${MEDIUM_MEDIA_QUERY} {
+    left: -3%;
+  }
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    left: -5%;
+  }
 `;
 
 export const NextButton = styled(Button)`
   right: -2%;
+
+  @media ${TABLET_MEDIA_QUERY} {
+    right: -2.5%;
+  }
+
+  @media ${MEDIUM_MEDIA_QUERY} {
+    right: -3%;
+  }
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    right: -5%;
+  }
 `;
