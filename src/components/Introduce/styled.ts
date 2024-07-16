@@ -23,7 +23,7 @@ export const Box = styled.div`
 
   @media ${MOBILE_MEDIA_QUERY} {
     width: 100%;
-    margin: 0 2rem;
+    margin: 0 1.5rem;
     gap: 5rem;
   }
 `;
@@ -33,7 +33,7 @@ export const TextBox = styled.div`
   padding-top: 8.125rem;
 
   @media ${MEDIUM_MEDIA_QUERY} {
-    padding-top: 6.125rem;
+    padding-top: 10.5rem;
   }
 `;
 

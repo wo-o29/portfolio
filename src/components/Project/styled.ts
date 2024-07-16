@@ -24,12 +24,11 @@ export const Box = styled.section`
 
   @media ${MEDIUM_MEDIA_QUERY} {
     width: 45.125rem;
-    padding-top: 7.375rem;
   }
 
   @media ${MOBILE_MEDIA_QUERY} {
     width: 25rem;
-    padding-top: 5.375rem;
+    /* padding-top: 10rem; */
   }
 
   @media ${SMALL_MEDIA_QUERY} {
@@ -80,6 +79,10 @@ export const List = styled.ul`
   scroll-behavior: smooth; // 스크롤 부드럽게
   scroll-snap-type: x mandatory; // 스크롤이 스냅 지점에 정렬
   scrollbar-width: none;
+
+  @media ${TABLET_MEDIA_QUERY} {
+    padding-top: 0.75rem;
+  }
 `;
 
 const Button = styled.button`
@@ -103,14 +106,6 @@ const Button = styled.button`
   @media ${TABLET_MEDIA_QUERY} {
     top: 46.5%;
   }
-
-  @media ${MEDIUM_MEDIA_QUERY} {
-    top: 43%;
-  }
-
-  @media ${MOBILE_MEDIA_QUERY} {
-    top: 40%;
-  }
 `;
 
 export const PrevButton = styled(Button)`
@@ -125,7 +120,7 @@ export const PrevButton = styled(Button)`
   }
 
   @media ${MOBILE_MEDIA_QUERY} {
-    left: -5%;
+    left: -6%;
   }
 `;
 
@@ -141,6 +136,6 @@ export const NextButton = styled(Button)`
   }
 
   @media ${MOBILE_MEDIA_QUERY} {
-    right: -5%;
+    right: -6%;
   }
 `;
