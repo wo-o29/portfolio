@@ -4,10 +4,10 @@ import Image from "next/image";
 import { domParser } from "@/src/utils/openGraphParser";
 
 interface PostProps {
-  url: string;
+  domText: string;
 }
 
-function Post({ url }: PostProps) {
+function Post({ domText }: PostProps) {
   const [data, setData] = useState<any>({
     title: "",
     description: "",
@@ -17,29 +17,19 @@ function Post({ url }: PostProps) {
   });
 
   useEffect(() => {
-    const fetchOgData = async (url: string) => {
-      try {
-        const response = await fetch(`/api/proxy?url=${url}`);
-        const data = await response.json();
-        const parser = new DOMParser();
-        const document = parser.parseFromString(data, "text/html");
-        const { title, description, linkUrl, imageUrl, favicon } =
-          domParser(document);
+    const parser = new DOMParser();
+    const document = parser.parseFromString(domText, "text/html");
+    const { title, description, linkUrl, imageUrl, favicon } =
+      domParser(document);
 
-        setData({
-          title,
-          description,
-          linkUrl,
-          imageUrl,
-          favicon,
-        });
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
-    fetchOgData(url);
-  }, [url]);
+    setData({
+      title,
+      description,
+      linkUrl,
+      imageUrl,
+      favicon,
+    });
+  }, [domText]);
 
   return (
     <S.PostBox>

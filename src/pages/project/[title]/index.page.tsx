@@ -1,5 +1,5 @@
 import { PROJECT_DATA } from "@/src/constants/project";
-import { GetStaticPropsContext } from "next/types";
+import { GetServerSidePropsContext } from "next/types";
 import * as S from "./styled";
 import { useTheme } from "@/src/context/ThemeContext";
 import { TECH_ICON_OBJECT } from "@/src/constants/techIcon";
@@ -7,34 +7,41 @@ import Content from "./Content";
 import LinkButton from "./LinkButton";
 import Post from "./Post";
 
-export const getStaticPaths = () => {
-  const paths = PROJECT_DATA.map((project) => ({
-    params: { title: project.query },
-  }));
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext,
+) => {
+  const { req } = context;
+  const protocol = req.headers["x-forwarded-proto"];
+  const hostname = req.headers.host;
 
-  return {
-    paths,
-    fallback: false,
-  };
-};
-
-export const getStaticProps = (context: GetStaticPropsContext) => {
   const data = PROJECT_DATA.find(
     (project) => project.query === context.params?.title,
+  );
+
+  const posts = await Promise.all(
+    (data?.post ?? []).map(async (url) => {
+      const response = await fetch(
+        `${protocol}://${hostname}/api/proxy?url=${url}`,
+      );
+      const data = await response.json();
+      return data;
+    }),
   );
 
   return {
     props: {
       data,
+      posts: posts ?? [],
     },
   };
 };
 
 interface ProjectDetailProps {
   data: (typeof PROJECT_DATA)[0];
+  posts: string[];
 }
 
-function ProjectDetail({ data }: any) {
+function ProjectDetail({ data, posts }: ProjectDetailProps) {
   const {
     title,
     content,
@@ -112,8 +119,8 @@ function ProjectDetail({ data }: any) {
         <S.PostBox>
           <S.PostTitle>관련 포스팅</S.PostTitle>
           <S.PostList>
-            {post.map((url: string) => (
-              <Post key={url} url={url} />
+            {posts.map((domText) => (
+              <Post key={domText} domText={domText} />
             ))}
           </S.PostList>
         </S.PostBox>
