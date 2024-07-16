@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { MEDIUM_MEDIA_QUERY, MOBILE_MEDIA_QUERY } from "@/src/styles/const";
 
 export const Box = styled.section`
   width: 81.25rem;

@@ -7,12 +7,17 @@ import Activity from "../components/Activity";
 import useWheelControl from "../hooks/useWheelControl";
 import Layout from "../components/Layout";
 import HitCount from "../components/HitCount";
+import { MAIN_BOX_MEDIA_QUERY } from "../styles/const";
 
 const Main = styled.main`
   width: 87.5rem;
   height: 100vh;
   margin: 0 auto;
   overflow: hidden;
+
+  @media ${MAIN_BOX_MEDIA_QUERY} {
+    width: 100%;
+  }
 `;
 
 function Home() {

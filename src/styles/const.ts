@@ -30,14 +30,10 @@ export const darkTheme: Theme = {
   },
 } as const;
 
-const lineAnimation = keyframes`
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(100%);
-  }
-`;
+export const MAIN_BOX_MEDIA_QUERY = `screen and (max-width: 1400px)`;
+export const TABLET_MEDIA_QUERY = `screen and (max-width: 1280px)`;
+export const MEDIUM_MEDIA_QUERY = `screen and (max-width: 1024px)`;
+export const MOBILE_MEDIA_QUERY = `screen and (max-width: 768px)`;
 
 export const hoverUnderline = (theme: Theme) => css`
   position: relative;
