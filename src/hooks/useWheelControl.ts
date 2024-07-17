@@ -1,9 +1,11 @@
-import { RefObject, useEffect, useState } from "react";
+import { Dispatch, RefObject, SetStateAction, useEffect } from "react";
 import { throttle } from "es-toolkit";
 
-const useWheelControl = (ref: RefObject<HTMLDivElement>) => {
-  const [step, setStep] = useState(1);
-
+const useWheelControl = (
+  ref: RefObject<HTMLDivElement>,
+  step: number,
+  setStep: Dispatch<SetStateAction<number>>,
+) => {
   const handleWheelEvent: EventListener = throttle((e: Event) => {
     const wheelEvent = e as unknown as WheelEvent;
 
@@ -61,7 +63,7 @@ const useWheelControl = (ref: RefObject<HTMLDivElement>) => {
     };
   }, [ref]);
 
-  return { step, upWheel, downWheel };
+  return { upWheel, downWheel };
 };
 
 export default useWheelControl;

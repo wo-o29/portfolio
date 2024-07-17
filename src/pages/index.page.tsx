@@ -1,13 +1,14 @@
 import Project from "../components/Project";
 import Introduce from "../components/Introduce";
 import styled from "@emotion/styled";
-import { useRef } from "react";
+import { use, useRef, useState } from "react";
 import SideBar from "../components/SideBar";
 import Activity from "../components/Activity";
 import useWheelControl from "../hooks/useWheelControl";
 import Layout from "../components/Layout";
 import HitCount from "../components/HitCount";
 import { MAIN_BOX_MEDIA_QUERY } from "../styles/const";
+import useTouchControl from "../hooks/useTouchControl";
 
 const Main = styled.main`
   width: 87.5rem;
@@ -21,8 +22,10 @@ const Main = styled.main`
 `;
 
 function Home() {
+  const [step, setStep] = useState(1);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { step, upWheel, downWheel } = useWheelControl(containerRef);
+  const { upWheel, downWheel } = useWheelControl(containerRef, step, setStep);
+  useTouchControl(containerRef, step, setStep);
 
   return (
     <>
